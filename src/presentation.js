@@ -39,7 +39,7 @@ export default class Presentation extends React.Component {
         progress="pacman"
       >
         <Slide transition={['slide']} bgColor="primary">
-          <Heading size={1} fit caps lineHeight={1} textColor="secondary">
+          <Heading size={1} fit lineHeight={1} textColor="secondary">
             <code>{`{key: /objects?/}`}</code>
           </Heading>
           <Text margin="30px 0 0" textColor="secondary" size={1} fit bold>
