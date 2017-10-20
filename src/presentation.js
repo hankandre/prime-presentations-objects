@@ -18,7 +18,7 @@ import {
 import createTheme from 'spectacle/lib/themes/default';
 import preloader from 'spectacle/lib/utils/preloader';
 import CodeSlide from 'spectacle-code-slide';
-import { example1 } from './assets/code';
+import { boxed, literals, classes } from './assets/';
 // Import Spectacle Core tags
 // Import theme
 // Require CSS
@@ -184,14 +184,24 @@ export default class Presentation extends React.Component {
           margin={0}
           bgColor="secondary"
           lang="javascript"
-          code={example1}
-          ranges={[
-            { loc: [0, 6], title: 'Literals' },
-            { loc: [0, 1], note: 'console.log(typeof num) ➡ number' },
-            { loc: [1, 2], note: 'console.log(typeof str) ➡ string' },
-            { loc: [2, 3], note: 'console.log(typeof bool) ➡ boolean' },
-            { loc: [8, 15], title: 'Boxed' }
-          ]}
+          code={literals}
+          ranges={[{ loc: [0, 8], title: 'Literals' }]}
+        />
+        <CodeSlide
+          transition={['slide']}
+          margin={0}
+          bgColor="secondary"
+          lang="javascript"
+          code={boxed}
+          ranges={[{ loc: [0, 10], title: 'Boxed' }]}
+        />
+        <CodeSlide
+          transition={['slide']}
+          margin={0}
+          bgColor="secondary"
+          lang="javascript"
+          code={classes}
+          ranges={[{ loc: [0, 12] }]}
         />
       </Deck>
     );
