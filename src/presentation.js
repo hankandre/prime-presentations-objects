@@ -181,6 +181,7 @@ export default class Presentation extends React.Component {
         </Slide>
         <CodeSlide
           transition={['slide']}
+          margin={0}
           lang="javascript"
           code={example1}
           ranges={[
