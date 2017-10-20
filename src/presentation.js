@@ -182,6 +182,7 @@ export default class Presentation extends React.Component {
         <CodeSlide
           transition={['slide']}
           margin={0}
+          bgColor="secondary"
           lang="javascript"
           code={example1}
           ranges={[
