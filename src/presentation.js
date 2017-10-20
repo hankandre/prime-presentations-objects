@@ -12,11 +12,13 @@ import {
   Notes,
   Quote,
   Slide,
+  Code,
   Text
 } from 'spectacle';
 import createTheme from 'spectacle/lib/themes/default';
 import preloader from 'spectacle/lib/utils/preloader';
-
+import CodeSlide from 'spectacle-code-slide';
+import { example1 } from './assets/code';
 // Import Spectacle Core tags
 // Import theme
 // Require CSS
@@ -116,7 +118,7 @@ export default class Presentation extends React.Component {
                 'Undefined',
                 'Symbol (new in ES6)'
               ].map(str => (
-                <ListItem style={{ width: 400 }} margin="0 auto">
+                <ListItem style={{ width: 500 }} margin="0 auto">
                   {str}
                 </ListItem>
               ))}
@@ -131,14 +133,24 @@ export default class Presentation extends React.Component {
           </Appear>
           <Notes>
             <ul>
-              <li>
-                <h1>"Who knows primitive types in Javascript?"</h1>
+              <li>Relate Types with Grammar</li>
+              <li style={{ borderLeft: '1px solid hotpink', paddingLeft: 10 }}>
+                <h1>"Who here can tell me the types in Javascript?"</h1>
+                <ul>
+                  {[
+                    'Object',
+                    'String',
+                    'Number',
+                    'Boolean',
+                    'Null',
+                    'Undefined',
+                    'Symbol (new in ES6)'
+                  ].map(str => <li>{str}</li>)}
+                </ul>
               </li>
-              <li>string</li>
-              <li>number</li>
-              <li>boolean</li>
-              <li>null</li>
-              <li>undefined</li>
+              <li>
+                <h1>"What's missing here?"</h1>
+              </li>
             </ul>
           </Notes>
         </Slide>
@@ -162,10 +174,23 @@ export default class Presentation extends React.Component {
           />
           <Notes>
             <ul>
-              <li>"And now</li>
+              <li>"And now we're in over our head, right"</li>
+              <li />
             </ul>
           </Notes>
         </Slide>
+        <CodeSlide
+          transition={['slide']}
+          lang="javascript"
+          code={example1}
+          ranges={[
+            { loc: [0, 6], title: 'Literals' },
+            { loc: [0, 1], note: 'console.log(typeof num) ➡ number' },
+            { loc: [1, 2], note: 'console.log(typeof str) ➡ string' },
+            { loc: [2, 3], note: 'console.log(typeof bool) ➡ boolean' },
+            { loc: [8, 15], title: 'Boxed' }
+          ]}
+        />
       </Deck>
     );
   }
