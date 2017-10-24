@@ -8,4 +8,7 @@ var func = function (a, b) {
 var obj = {hello: 'world'};
 
 
+
+
+
 `;
